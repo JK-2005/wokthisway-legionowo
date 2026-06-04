@@ -1,4 +1,4 @@
-// Intro (wok + ogien) — znika po starcie, pokazuje sie raz na sesje
+// Intro — proste, gladkie przejscie; pokazuje sie raz na sesje
 const intro = document.getElementById('intro');
 if (intro && getComputedStyle(intro).display !== 'none') {
   let done = false;
@@ -6,10 +6,10 @@ if (intro && getComputedStyle(intro).display !== 'none') {
     if (done) return;
     done = true;
     intro.classList.add('hide');
-    setTimeout(() => intro.remove(), 800);
+    setTimeout(() => intro.remove(), 650);
   };
-  window.addEventListener('load', () => setTimeout(finish, 2100));
-  setTimeout(finish, 3800); // fallback gdyby load juz przeszedl
+  window.addEventListener('load', () => setTimeout(finish, 1000));
+  setTimeout(finish, 2200); // fallback gdyby load juz przeszedl
 }
 
 // Mobile nav
