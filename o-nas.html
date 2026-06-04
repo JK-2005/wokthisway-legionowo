@@ -8,15 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
   <div class="intro" id="intro">
-    <div class="glow"></div>
-    <img class="intro-logo" src="img/logo-white.png" alt="Wok This Way">
-    <span class="intro-tag">Smażymy na ogniu</span>
-    <div class="intro-bar"><i></i></div>
+    <div class="burn">
+      <div class="flames"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <img class="burn-logo" src="img/logo-white.png" alt="Wok This Way">
+    </div>
   </div>
   <script>if(sessionStorage.getItem('wtwIntro')){var _i=document.getElementById('intro');if(_i)_i.style.display='none';}else{sessionStorage.setItem('wtwIntro','1');}</script>
 
@@ -38,17 +38,13 @@
     <p>Jeden wok, kilka przepisów i pomysł, że Legionowo zasługuje na porządne azjatyckie żarcie.</p>
   </div>
 
-  <section class="about-main">
+  <section class="about-main" style="display:block;max-width:840px;margin-inline:auto;">
     <div class="about-text">
       <h2>Gotujemy tu,<br>nie podgrzewamy</h2>
       <p>Stoimy na Targowisku Miejskim przy Sobieskiego 6 i smażymy. <strong>Na żywym ogniu, na bieżąco.</strong> Żadnego sosu, który czeka w garnku od rana — każde zamówienie ląduje na patelni od nowa.</p>
       <p>Wok to nie tylko patelnia, to metoda. Wysoka temperatura, szybki ruch, składniki dorzucane w odpowiedniej kolejności. Brzmi prosto, bo jest proste — trzeba tylko wiedzieć kiedy co wrzucić.</p>
       <p>Mamy <strong>6 woków, 4 przystawki i własne kimchi</strong>, które robimy sami. Jak czegoś nie ma w menu, to znaczy że tego nie robimy — wolimy mało rzeczy zrobić porządnie niż dużo byle jak.</p>
       <a href="menu.html" class="btn-primary" style="margin-top:8px;">Zobacz co smażymy</a>
-    </div>
-    <div class="about-img">
-      <img src="img/danie2.webp" alt="Wok z makaronem udon, wołowiną i warzywami na patelni" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="ph" style="display:none;">[ brak zdjęcia ]</div>
     </div>
   </section>
 
@@ -98,6 +94,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=5" defer></script>
+  <script src="script.js?v=6" defer></script>
 </body>
 </html>

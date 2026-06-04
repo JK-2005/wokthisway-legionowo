@@ -8,15 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
   <div class="intro" id="intro">
-    <div class="glow"></div>
-    <img class="intro-logo" src="img/logo-white.png" alt="Wok This Way">
-    <span class="intro-tag">Smażymy na ogniu</span>
-    <div class="intro-bar"><i></i></div>
+    <div class="burn">
+      <div class="flames"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <img class="burn-logo" src="img/logo-white.png" alt="Wok This Way">
+    </div>
   </div>
   <script>if(sessionStorage.getItem('wtwIntro')){var _i=document.getElementById('intro');if(_i)_i.style.display='none';}else{sessionStorage.setItem('wtwIntro','1');}</script>
 
@@ -108,14 +108,11 @@
       </div>
 
     </div>
-  </section>
-
-  <!-- SOSY -->
-  <section class="menu-section">
-    <div class="menu-head"><span class="menu-label yellow">Sosy</span><h2>Do wyboru</h2></div>
-    <div class="sauces">
+    <div class="sauce-callout">
+      <span class="sc-label">Sosy do wyboru:</span>
       <span class="sauce">Hot Mayo</span>
       <span class="sauce">Spicy Unagi</span>
+      <span class="sc-note">do frytek, spring rollsów i krewetek — bez dopłaty</span>
     </div>
   </section>
 
@@ -165,6 +162,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=5" defer></script>
+  <script src="script.js?v=6" defer></script>
 </body>
 </html>
