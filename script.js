@@ -1,3 +1,17 @@
+// Intro (wok + ogien) — znika po starcie, pokazuje sie raz na sesje
+const intro = document.getElementById('intro');
+if (intro && getComputedStyle(intro).display !== 'none') {
+  let done = false;
+  const finish = () => {
+    if (done) return;
+    done = true;
+    intro.classList.add('hide');
+    setTimeout(() => intro.remove(), 800);
+  };
+  window.addEventListener('load', () => setTimeout(finish, 2100));
+  setTimeout(finish, 3800); // fallback gdyby load juz przeszedl
+}
+
 // Mobile nav
 const burger = document.getElementById('navBurger');
 const navLinks = document.getElementById('navLinks');

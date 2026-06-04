@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -29,7 +29,108 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 
-.display { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; letter-spacing: -0.5px; line-height: 0.92; }
+.display { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; letter-spacing: -0.5px; line-height: 0.92; }
+
+/* ===== INTRO (wok + ogien) ===== */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at 50% 70%, #2a1a0e 0%, #120f0c 55%, #0a0807 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+.intro.hide { opacity: 0; visibility: hidden; }
+
+.intro-stage { position: relative; width: 240px; height: 200px; }
+
+/* wok */
+.wok {
+  position: absolute;
+  bottom: 36px; left: 50%; margin-left: -90px;
+  width: 180px; height: 86px;
+  background: linear-gradient(180deg, #443b32 0%, #1a1511 55%, #0c0a08 100%);
+  border-radius: 14px 14px 96px 96px / 14px 14px 76px 76px;
+  box-shadow: inset 0 10px 16px rgba(255,200,120,0.12), 0 14px 34px rgba(0,0,0,0.6);
+  z-index: 3;
+}
+.wok::before {
+  content: '';
+  position: absolute;
+  top: -7px; left: 0; right: 0; height: 16px;
+  background: #0d0b09;
+  border-radius: 50%;
+  box-shadow: inset 0 3px 6px rgba(255,170,90,0.18);
+}
+/* raczka woka */
+.wok::after {
+  content: '';
+  position: absolute;
+  top: 16px; right: -54px;
+  width: 60px; height: 11px;
+  background: linear-gradient(90deg, #2a2521, #0d0b09);
+  border-radius: 6px;
+  transform: rotate(-6deg);
+}
+
+/* ogien */
+.fire { position: absolute; bottom: 58px; left: 50%; transform: translateX(-50%); width: 150px; height: 150px; z-index: 2; }
+.fire span {
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 50px; height: 96px; margin-left: -25px;
+  background: radial-gradient(circle at 50% 78%, #ffe96b 0%, #f7c123 28%, #e5344c 68%, transparent 80%);
+  border-radius: 50% 50% 36% 36%;
+  transform-origin: 50% 100%;
+  mix-blend-mode: screen;
+  filter: blur(2px);
+  animation: flame 0.5s ease-in-out infinite alternate;
+}
+.fire span:nth-child(1) { height: 110px; margin-left: -28px; width: 56px; animation-duration: 0.55s; }
+.fire span:nth-child(2) { left: 36%; height: 78px; width: 42px; animation-duration: 0.42s; animation-delay: 0.08s; }
+.fire span:nth-child(3) { left: 64%; height: 82px; width: 44px; animation-duration: 0.47s; animation-delay: 0.15s; }
+.fire span:nth-child(4) { height: 64px; width: 34px; opacity: 0.9; animation-duration: 0.38s; animation-delay: 0.05s; }
+.fire span:nth-child(5) { left: 50%; height: 50px; width: 26px; background: radial-gradient(circle at 50% 80%, #fff7cc, #ffe96b 40%, transparent 75%); animation-duration: 0.33s; }
+
+@keyframes flame {
+  0%   { transform: translateX(-50%) scaleY(1) scaleX(1) skewX(-2deg); }
+  50%  { transform: translateX(-50%) scaleY(1.18) scaleX(0.9) skewX(2deg); }
+  100% { transform: translateX(-50%) scaleY(1.32) scaleX(0.8) skewX(-2deg); opacity: 0.92; }
+}
+
+/* zar pod wokiem */
+.fire::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 50%; transform: translateX(-50%);
+  width: 150px; height: 40px;
+  background: radial-gradient(ellipse at center, rgba(247,140,40,0.55), transparent 70%);
+  filter: blur(6px);
+}
+
+.intro-logo {
+  width: 168px; height: auto;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: introLogo 0.7s ease 0.35s forwards;
+}
+@keyframes introLogo { to { opacity: 1; transform: translateY(0); } }
+
+.intro-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  opacity: 0;
+  animation: introLogo 0.7s ease 0.6s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro { display: none; }
+}
 
 /* ===== NAV ===== */
 nav {
@@ -45,7 +146,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800;
+  font-family: 'Dela Gothic One', sans-serif; font-weight: 400;
   font-size: 22px;
   color: #fff;
   letter-spacing: 1px;
@@ -196,7 +297,7 @@ nav {
 }
 
 .hero-content h1 {
-  font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800;
+  font-family: 'Dela Gothic One', sans-serif; font-weight: 400;
   font-size: clamp(56px, 8vw, 110px);
   line-height: 0.9;
   color: #fff;
@@ -235,7 +336,7 @@ nav {
   padding: 12px 18px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
-.hero-price-tag b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; display: block; }
+.hero-price-tag b { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 20px; display: block; }
 .hero-price-tag span { font-size: 13px; color: var(--ink-soft); }
 
 /* ===== SECTION ===== */
@@ -248,7 +349,7 @@ nav {
   font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
   color: var(--red); display: block; margin-bottom: 12px;
 }
-.section-head h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(38px, 5.5vw, 72px); text-transform: uppercase; line-height: 0.95; }
+.section-head h2 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(38px, 5.5vw, 72px); text-transform: uppercase; line-height: 0.95; }
 .section-dark .section-head .eyebrow { color: var(--yellow); }
 
 .link-arrow { font-weight: 700; font-size: 14px; color: var(--red); white-space: nowrap; transition: gap var(--ease); display: inline-flex; gap: 6px; }
@@ -283,8 +384,8 @@ nav {
 
 .dish-info { padding: 22px 22px 24px; }
 .dish-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
-.dish-top h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase; line-height: 1; }
-.dish-price { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: var(--red); white-space: nowrap; }
+.dish-top h3 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 24px; text-transform: uppercase; line-height: 1; }
+.dish-price { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 22px; color: var(--red); white-space: nowrap; }
 .dish-info p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
 
 /* ===== STRIP (color band) ===== */
@@ -298,12 +399,12 @@ nav {
   flex-wrap: wrap;
   text-align: center;
 }
-.strip span { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(18px, 2.6vw, 30px); text-transform: uppercase; color: var(--ink); }
+.strip span { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(18px, 2.6vw, 30px); text-transform: uppercase; color: var(--ink); }
 .strip .sep { color: rgba(0,0,0,0.3); }
 
 /* ===== LOCATION ===== */
 .location-content { display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; }
-.location-text h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 5vw, 60px); text-transform: uppercase; line-height: 0.95; margin-bottom: 20px; }
+.location-text h2 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(34px, 5vw, 60px); text-transform: uppercase; line-height: 0.95; margin-bottom: 20px; }
 .location-address { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
 .hours-grid { border-top: 1px solid rgba(255,255,255,0.12); margin-bottom: 32px; }
 .hours-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15px; }
@@ -338,7 +439,7 @@ nav {
   background: radial-gradient(circle at 50% 42%, rgba(229,52,76,0.10), transparent 55%);
 }
 .map-card .pin { font-size: 46px; margin-bottom: 14px; position: relative; }
-.map-card h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase; color: var(--ink); margin-bottom: 6px; position: relative; }
+.map-card h4 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 24px; text-transform: uppercase; color: var(--ink); margin-bottom: 6px; position: relative; }
 .map-card p { color: var(--ink-soft); font-size: 15px; margin-bottom: 22px; position: relative; line-height: 1.5; }
 .map-card .btn-primary { position: relative; }
 
@@ -351,14 +452,14 @@ nav {
 .delivery-card .ico { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
 .delivery-card.a .ico { background: var(--green); }
 .delivery-card.b .ico { background: var(--yellow); }
-.delivery-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; text-transform: uppercase; margin-bottom: 10px; }
+.delivery-card h3 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 26px; text-transform: uppercase; margin-bottom: 10px; }
 .delivery-card p { color: var(--ink-soft); font-size: 15px; margin-bottom: 20px; }
-.delivery-card .big { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; color: var(--red); line-height: 1; margin-bottom: 6px; }
+.delivery-card .big { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 40px; color: var(--red); line-height: 1; margin-bottom: 6px; }
 
 /* ===== FOOTER ===== */
 footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 64px 6% 28px; }
 .footer-inner { display: flex; justify-content: space-between; gap: 48px; margin-bottom: 48px; flex-wrap: wrap; }
-.footer-logo { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; color: #fff; letter-spacing: 1px; display: block; margin-bottom: 16px; text-transform: uppercase; }
+.footer-logo { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 26px; color: #fff; letter-spacing: 1px; display: block; margin-bottom: 16px; text-transform: uppercase; }
 .footer-logo .dot { color: var(--yellow); }
 .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
 .footer-brand a { display: block; font-size: 14px; margin-bottom: 6px; transition: color var(--ease); }
@@ -374,26 +475,26 @@ footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 64px 6% 
 .page-hero { background: var(--ink); padding: 64px 6% 60px; position: relative; overflow: hidden; }
 .page-hero::after { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(247,193,35,0.12), transparent 70%); }
 .page-hero .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); display: block; margin-bottom: 14px; }
-.page-hero h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(48px, 8vw, 96px); color: #fff; text-transform: uppercase; line-height: 0.9; }
+.page-hero h1 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(48px, 8vw, 96px); color: #fff; text-transform: uppercase; line-height: 0.9; }
 .page-hero p { color: rgba(255,255,255,0.6); font-size: 17px; margin-top: 16px; max-width: 500px; }
 
 /* ===== MENU PAGE ===== */
 .menu-section { padding: 76px 6%; }
 .menu-section:nth-child(even) { background: var(--bg-soft); }
 .menu-head { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
-.menu-label { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #fff; padding: 8px 16px; border-radius: 6px; }
+.menu-label { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #fff; padding: 8px 16px; border-radius: 6px; }
 .menu-label.red { background: var(--red); }
 .menu-label.green { background: var(--green); }
 .menu-label.yellow { background: var(--yellow); color: var(--ink); }
 .menu-label.dark { background: var(--ink); }
-.menu-head h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(30px, 4.5vw, 50px); text-transform: uppercase; line-height: 0.95; }
+.menu-head h2 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 50px); text-transform: uppercase; line-height: 0.95; }
 
 .menu-items { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .menu-item { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; transition: transform var(--ease), border-color var(--ease); }
 .menu-item:hover { transform: translateY(-3px); border-color: rgba(0,0,0,0.18); }
 .menu-item-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; }
-.menu-item-top h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase; line-height: 1; }
-.menu-item-price { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; color: var(--red); white-space: nowrap; }
+.menu-item-top h3 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 24px; text-transform: uppercase; line-height: 1; }
+.menu-item-price { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 24px; color: var(--red); white-space: nowrap; }
 .menu-item-ing { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 .menu-item-meta { margin-top: 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .spice { font-size: 13px; font-weight: 700; color: var(--red); }
@@ -401,7 +502,7 @@ footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 64px 6% 
 
 .drinks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .drinks-cat { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
-.drinks-cat h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--bg-soft); }
+.drinks-cat h3 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--bg-soft); }
 .drink-row { display: flex; justify-content: space-between; font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--line); }
 .drink-row:last-child { border-bottom: none; }
 .drink-price { font-weight: 700; color: var(--red); }
@@ -410,11 +511,11 @@ footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 64px 6% 
 .menu-full-img img { width: 100%; display: block; }
 
 .sauces { display: flex; gap: 14px; flex-wrap: wrap; }
-.sauce { background: var(--ink); color: #fff; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; padding: 12px 22px; border-radius: 40px; }
+.sauce { background: var(--ink); color: #fff; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; padding: 12px 22px; border-radius: 40px; }
 
 /* ===== O NAS ===== */
 .about-main { padding: 110px 6%; display: grid; grid-template-columns: 1.05fr 1fr; gap: 72px; align-items: center; }
-.about-text h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 5vw, 60px); text-transform: uppercase; line-height: 0.92; margin-bottom: 26px; }
+.about-text h2 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(34px, 5vw, 60px); text-transform: uppercase; line-height: 0.92; margin-bottom: 26px; }
 .about-text p { color: var(--ink-soft); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
 .about-text p strong { color: var(--ink); font-weight: 700; }
 .about-img { aspect-ratio: 3/4; background: #221d18; border-radius: var(--radius); overflow: hidden; position: relative; }
@@ -425,25 +526,25 @@ footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 64px 6% 
 .about-facts-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
 .fact { padding: 60px 32px; border-right: 1px solid rgba(255,255,255,0.08); }
 .fact:last-child { border-right: none; }
-.fact .num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; color: var(--yellow); line-height: 1; display: block; margin-bottom: 12px; }
+.fact .num { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 64px; color: var(--yellow); line-height: 1; display: block; margin-bottom: 12px; }
 .fact .num small { font-size: 28px; }
 .fact .lbl { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.55; }
 
 .about-story { padding: 110px 6%; max-width: 760px; }
-.about-story h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(30px, 4.5vw, 50px); text-transform: uppercase; margin-bottom: 24px; }
+.about-story h2 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 50px); text-transform: uppercase; margin-bottom: 24px; }
 .about-story p { font-size: 16px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 16px; }
 
 /* ===== KONTAKT ===== */
 .contact { padding: 110px 6%; display: grid; grid-template-columns: 1fr 1.25fr; gap: 72px; align-items: start; }
-.contact-info h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 5vw, 58px); text-transform: uppercase; line-height: 0.92; margin-bottom: 36px; }
+.contact-info h2 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(34px, 5vw, 58px); text-transform: uppercase; line-height: 0.92; margin-bottom: 36px; }
 .c-block { margin-bottom: 26px; }
 .c-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; display: block; }
-.c-block a { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; color: var(--ink); transition: color var(--ease); display: block; }
+.c-block a { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 26px; color: var(--ink); transition: color var(--ease); display: block; }
 .c-block a:hover { color: var(--red); }
 .c-block a.sm { font-family: 'DM Sans'; font-size: 16px; font-weight: 600; }
 .c-block p { font-size: 17px; line-height: 1.6; }
 .contact-hours { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
-.contact-hours h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase; margin-bottom: 14px; }
+.contact-hours h3 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 24px; text-transform: uppercase; margin-bottom: 14px; }
 .contact-hours .hours-grid { border-top: 1px solid var(--line); }
 .contact-hours .hours-row { border-bottom: 1px solid var(--line); }
 .contact-hours .hours-row span:first-child { color: var(--ink-soft); }
@@ -455,7 +556,7 @@ footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 64px 6% 
 .cc-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 11px; border-radius: 40px; margin-bottom: 14px; color: #fff; }
 .cc-tag.green { background: var(--green); }
 .cc-tag.red { background: var(--red); }
-.cc h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 21px; text-transform: uppercase; margin-bottom: 6px; color: var(--ink); }
+.cc h4 { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: 21px; text-transform: uppercase; margin-bottom: 6px; color: var(--ink); }
 .cc p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
 
 /* ===== REVEAL ===== */

@@ -12,6 +12,16 @@
 </head>
 <body>
 
+  <div class="intro" id="intro">
+    <div class="intro-stage">
+      <div class="fire"><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="wok"></div>
+    </div>
+    <img class="intro-logo" src="img/logo-white.png" alt="Wok This Way">
+    <span class="intro-tag">Smażymy na ogniu</span>
+  </div>
+  <script>if(sessionStorage.getItem('wtwIntro')){var _i=document.getElementById('intro');if(_i)_i.style.display='none';}else{sessionStorage.setItem('wtwIntro','1');}</script>
+
   <nav>
     <a href="index.html" class="nav-logo"><img src="img/logo-white.png" alt="Wok This Way Legionowo"></a>
     <ul class="nav-links" id="navLinks">
