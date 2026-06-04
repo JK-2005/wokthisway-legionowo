@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>O nas | Wok This Way Legionowo</title>
-  <meta name="description" content="Azjatycki food truck w Legionowie. Gotujemy na Targowisku Miejskim, codziennie od nowa, na żywym ogniu.">
+  <meta name="description" content="Azjatycki wok smażony na żywo na Targowisku Miejskim w Legionowie. Poznaj Wok This Way.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">WOK<span class="accent">·</span>THIS<span class="accent">·</span>WAY</a>
+    <a href="index.html" class="nav-logo">Wok This Way</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Start</a></li>
       <li><a href="menu.html">Menu</a></li>
@@ -21,74 +21,57 @@
       <li><a href="kontakt.html">Kontakt</a></li>
       <li><a href="tel:+48227744446" class="nav-cta">22 774 44 46</a></li>
     </ul>
-    <button class="nav-burger" id="navBurger" aria-label="Otwórz menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-burger" id="navBurger" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="page-hero">
-    <div>
-      <span class="page-hero-tag">Wok This Way · Legionowo</span>
-      <h1>O nas</h1>
-      <p>Zaczęło się od woka, kilku przepisów i pomysłu, że Legionowo zasługuje na coś więcej.</p>
-    </div>
+    <span class="eyebrow">Wok This Way · Legionowo</span>
+    <h1>O nas</h1>
+    <p>Jeden wok, kilka przepisów i pomysł, że Legionowo zasługuje na porządne azjatyckie żarcie.</p>
   </div>
 
-  <!-- GŁÓWNA SEKCJA O NAS -->
-  <section class="about-hero-section">
+  <section class="about-main">
     <div class="about-text">
-      <h2>Gotujemy tu,<br>nie podgrzewamy.</h2>
-      <p>
-        Stoimy na Targowisku Miejskim przy Sobieskiego 6 i smażymy. <strong>Na żywym ogniu, na bieżąco.</strong> Żadnych podstawek z sosem, który czeka od rana. Każde zamówienie idzie na patelnię od nowa.
-      </p>
-      <p>
-        Wok to nie tylko patelnia — to też metoda. Wysoka temperatura, szybki ruch, składniki które trafiają do naczynia w odpowiedniej kolejności. Brzmi prosto, bo jest proste. Tylko trzeba wiedzieć jak.
-      </p>
-      <p>
-        Mamy <strong>6 woków, 4 przystawki i własne kimchi</strong>, które robimy sami. Jeśli czegoś nie ma w menu, to znaczy że tego nie robimy — nie dlatego że nie możemy, ale dlatego że chcemy robić mało rzeczy porządnie.
-      </p>
+      <h2>Gotujemy tu,<br>nie podgrzewamy</h2>
+      <p>Stoimy na Targowisku Miejskim przy Sobieskiego 6 i smażymy. <strong>Na żywym ogniu, na bieżąco.</strong> Żadnego sosu, który czeka w garnku od rana — każde zamówienie ląduje na patelni od nowa.</p>
+      <p>Wok to nie tylko patelnia, to metoda. Wysoka temperatura, szybki ruch, składniki dorzucane w odpowiedniej kolejności. Brzmi prosto, bo jest proste — trzeba tylko wiedzieć kiedy co wrzucić.</p>
+      <p>Mamy <strong>6 woków, 4 przystawki i własne kimchi</strong>, które robimy sami. Jak czegoś nie ma w menu, to znaczy że tego nie robimy — wolimy mało rzeczy zrobić porządnie niż dużo byle jak.</p>
       <a href="menu.html" class="btn-primary" style="margin-top:8px;">Zobacz co smażymy</a>
     </div>
-    <div class="about-img-wrap">
-      <!-- zastąp src="img/o-nas.webp" prawdziwym zdjęciem -->
-      <span>[ zdjęcie — wok / kuchnia / ekipa ]</span>
+    <div class="about-img">
+      <img src="img/danie-2.jpg" alt="Wok z makaronem udon, wołowiną i warzywami na patelni" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="ph" style="display:none;">[ img/danie-2.jpg — wok / kuchnia / food truck ]</div>
     </div>
   </section>
 
-  <!-- FAKTY -->
-  <div class="about-facts-section">
-    <div class="fact-card reveal-item">
-      <span class="fact-number">6</span>
-      <span class="fact-label">autorskich woków w menu — każdy z innym sosem i innym makaronem</span>
-    </div>
-    <div class="fact-card reveal-item">
-      <span class="fact-number">od 30<span style="font-size:32px"> zł</span></span>
-      <span class="fact-label">tyle kosztuje pełne danie — wok z kilkunastoma składnikami</span>
-    </div>
-    <div class="fact-card reveal-item">
-      <span class="fact-number">5</span>
-      <span class="fact-label">dni w tygodniu otwarte — od wtorku do niedzieli, od południa</span>
+  <div class="about-facts">
+    <div class="about-facts-inner">
+      <div class="fact reveal">
+        <span class="num">6</span>
+        <span class="lbl">autorskich woków — każdy z innym sosem i innym makaronem</span>
+      </div>
+      <div class="fact reveal">
+        <span class="num">30<small> zł</small></span>
+        <span class="lbl">od tyle kosztuje pełne danie z kilkunastoma składnikami</span>
+      </div>
+      <div class="fact reveal">
+        <span class="num">5</span>
+        <span class="lbl">dni w tygodniu — otwarte od wtorku do niedzieli, od południa</span>
+      </div>
     </div>
   </div>
 
-  <!-- HISTORIA -->
-  <section class="about-story reveal-item">
+  <section class="about-story reveal">
     <h2>Skąd ten pomysł?</h2>
-    <p>
-      Legionowo ma sporo restauracji. Pizzerie, kebaby, sushi z dostawy. Azjatyckiego woka smażonego na miejscu — nie było. Dlatego przynieśliśmy woka.
-    </p>
-    <p>
-      Targowisko Miejskie to dobre miejsce. Ludzie tu przychodzą po konkretne rzeczy, nie żeby siedzieć dwie godziny przy stole. Nam to pasuje — robimy szybko, konkretnie i smacznie. Możesz zjeść na miejscu albo zabrać ze sobą.
-    </p>
-    <p>
-      Dowozimy też do domu — przy zamówieniu powyżej 40 zł, Legionowo i okolice. Dzwoń pod <a href="tel:+48227744446" style="color:var(--red);font-weight:600;">22 774 44 46</a>.
-    </p>
+    <p>Legionowo ma sporo miejsc na jedzenie. Pizzerie, kebaby, sushi z dostawy. Azjatyckiego woka smażonego na miejscu — nie było. Więc przynieśliśmy woka.</p>
+    <p>Targowisko Miejskie to dobre miejsce. Ludzie przychodzą tu po konkretne rzeczy, nie żeby siedzieć dwie godziny przy stole. Nam to pasuje — robimy szybko i smacznie. Zjesz na miejscu albo bierzesz ze sobą.</p>
+    <p>Dowozimy też do domu przy zamówieniu powyżej 40 zł — Legionowo i okolice. Dzwoń pod <a href="tel:+48227744446" style="color:var(--red);font-weight:700;">22 774 44 46</a>.</p>
   </section>
 
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo">WOK THIS WAY</span>
+        <span class="footer-logo">Wok This Way</span>
         <p>Targowisko Miejskie<br>ul. Jana III Sobieskiego 6<br>05-122 Legionowo</p>
         <a href="tel:+48227744446">22 774 44 46</a>
         <a href="mailto:kontakt@wokthisway.pl">kontakt@wokthisway.pl</a>

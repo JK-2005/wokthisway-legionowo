@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wok This Way Legionowo | Azjatycki Food Truck</title>
-  <meta name="description" content="Azjatycki wok smażony na żywo na Targowisku Miejskim w Legionowie. Zamówienia i dostawa: 22 774 44 46. Otwarte wt–niedz od 12:00.">
+  <title>Wok This Way Legionowo | Azjatycki Wok na Targowisku Miejskim</title>
+  <meta name="description" content="Azjatycki wok smażony na żywo na Targowisku Miejskim w Legionowie. Dowóz od 40 zł. Zamówienia: 22 774 44 46. Otwarte wt–niedz od 12:00.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -28,7 +28,7 @@
       {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Sunday"],"opens":"12:00","closes":"21:00"},
       {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"12:00","closes":"22:00"}
     ],
-    "url": "https://wokthisway.pl",
+    "url": "https://jk-2005.github.io/wokthisway-legionowo/",
     "hasDeliveryMethod": "http://schema.org/DeliveryModeBySelf",
     "areaServed": "Legionowo"
   }
@@ -37,7 +37,7 @@
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">WOK<span class="accent">·</span>THIS<span class="accent">·</span>WAY</a>
+    <a href="index.html" class="nav-logo">Wok This Way</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Start</a></li>
       <li><a href="menu.html">Menu</a></li>
@@ -45,76 +45,84 @@
       <li><a href="kontakt.html">Kontakt</a></li>
       <li><a href="tel:+48227744446" class="nav-cta">22 774 44 46</a></li>
     </ul>
-    <button class="nav-burger" id="navBurger" aria-label="Otwórz menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-burger" id="navBurger" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-tag">Legionowo · Targowisko Miejskie</span>
-      <h1>Smażone<br>na żywo.<br>Jedzone<br>od ręki.</h1>
-      <p>Azjatycki wok bez skrótów — kilkanaście składników, jeden autorski sos i ogień pod patelnią. Każde danie robi się na bieżąco.</p>
+      <span class="hero-tag">🥢 Targowisko Miejskie · Legionowo</span>
+      <h1>Wok <span class="y">prosto</span><br>z <span class="r">ognia</span></h1>
+      <p>Makaron, świeże warzywa i autorski sos lecą na rozgrzaną patelnię przy Tobie. Bez podgrzewania, bez czekania od rana.</p>
       <div class="hero-actions">
-        <a href="menu.html" class="btn-primary">Zobacz menu</a>
-        <a href="tel:+48227744446" class="btn-secondary">Zamów: 22 774 44 46</a>
+        <a href="menu.html" class="btn-yellow">Zobacz menu</a>
+        <a href="tel:+48227744446" class="btn-ghost">Zadzwoń i zamów</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-img-wrap">
-        <!-- zastąp src="img/hero.webp" prawdziwym zdjęciem -->
-        <span class="hero-img-placeholder-text">[ zdjęcie dania hero ]</span>
+      <img src="img/danie-1.jpg" alt="Azjatycki wok z makaronem, warzywami i świeżą bazylią" loading="eager" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="ph" style="display:none;">[ wrzuć img/danie-1.jpg ]</div>
+      <div class="hero-price-tag">
+        <b>od 30 zł</b>
+        <span>pełny wok</span>
       </div>
     </div>
   </section>
 
-  <!-- BESTSELLERS -->
+  <!-- STRIP -->
+  <div class="strip">
+    <span>Smażone na żywo</span><span class="sep">•</span>
+    <span>Własne kimchi</span><span class="sep">•</span>
+    <span>Dowóz w Legionowie</span>
+  </div>
+
+  <!-- BESTSELLERY -->
   <section class="section">
-    <div class="section-header">
-      <h2>Kilka rzeczy,<br>które zamawiają wszyscy</h2>
-      <a href="menu.html" class="link-arrow">Pełne menu →</a>
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Co zamawiają najczęściej</span>
+        <h2>Trzy pewniaki<br>z patelni</h2>
+      </div>
+      <a href="menu.html" class="link-arrow">Całe menu →</a>
     </div>
     <div class="dishes-grid">
-      <div class="dish-card reveal-item">
-        <div class="dish-img-placeholder">
-          <span class="dish-img-placeholder-label">[ zdjęcie dania ]</span>
+
+      <article class="dish-card reveal">
+        <div class="dish-img">
+          <span class="dish-badge badge-green">Klasyk</span>
+          <img src="img/danie-1.jpg" alt="Bangkok Beat – makaron ryżowy z kurczakiem i warzywami" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="ph" style="display:none;">[ img/danie-1.jpg ]</div>
         </div>
         <div class="dish-info">
-          <div class="dish-top">
-            <h3>Bangkok Beat</h3>
-            <span class="dish-price">30 zł</span>
-          </div>
-          <p>Sos tamaryndowy, makaron ryżowy, kurczak, kiełki fasoli mung, orzechy arachidowe.</p>
-          <span class="dish-tag">🌿 Klasyk</span>
+          <div class="dish-top"><h3>Bangkok Beat</h3><span class="dish-price">30 zł</span></div>
+          <p>Sos tamaryndowy, makaron ryżowy, kurczak, tofu, kiełki mung i prażone orzechy arachidowe.</p>
         </div>
-      </div>
-      <div class="dish-card reveal-item">
-        <div class="dish-img-placeholder">
-          <span class="dish-img-placeholder-label">[ zdjęcie dania ]</span>
-        </div>
-        <div class="dish-info">
-          <div class="dish-top">
-            <h3>Phuket Heat</h3>
-            <span class="dish-price">35 zł</span>
-          </div>
-          <p>Sos kokosowy, krewetki, makaron mee, brokuł, papryka. Mocno pikantny.</p>
-          <span class="dish-tag">🌶️🌶️ Ostre</span>
-        </div>
-      </div>
-      <div class="dish-card reveal-item">
-        <div class="dish-img-placeholder">
-          <span class="dish-img-placeholder-label">[ zdjęcie dania ]</span>
+      </article>
+
+      <article class="dish-card reveal">
+        <div class="dish-img">
+          <span class="dish-badge badge-red">Ostre 🌶️🌶️</span>
+          <img src="img/danie-2.jpg" alt="Phuket Heat – makaron mee z krewetkami w sosie kokosowym" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="ph" style="display:none;">[ img/danie-2.jpg ]</div>
         </div>
         <div class="dish-info">
-          <div class="dish-top">
-            <h3>Duck'n'Roll</h3>
-            <span class="dish-price">37 zł</span>
-          </div>
-          <p>Zielone curry, pieczona kaczka, makaron mee, pędy bambusa, lychee, tajska bazylia.</p>
-          <span class="dish-tag">⭐ Polecane</span>
+          <div class="dish-top"><h3>Phuket Heat</h3><span class="dish-price">35 zł</span></div>
+          <p>Sos kokosowy, makaron mee, krewetki, brokuł i papryka. Mocno, ale z głębią smaku.</p>
         </div>
-      </div>
+      </article>
+
+      <article class="dish-card reveal">
+        <div class="dish-img">
+          <span class="dish-badge badge-yellow">Polecane</span>
+          <img src="img/danie-3.jpg" alt="Duck'n'Roll – makaron mee z pieczoną kaczką w zielonym curry" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="ph" style="display:none;">[ img/danie-3.jpg ]</div>
+        </div>
+        <div class="dish-info">
+          <div class="dish-top"><h3>Duck'n'Roll</h3><span class="dish-price">37 zł</span></div>
+          <p>Zielone curry, pieczona kaczka, makaron mee, pędy bambusa, lychee i tajska bazylia.</p>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -122,55 +130,45 @@
   <section class="section-dark">
     <div class="location-content">
       <div class="location-text">
-        <h2>Znajdziesz nas<br>na Targowisku</h2>
-        <p class="location-address">
-          ul. Jana III Sobieskiego 6<br>
-          05-122 Legionowo
-        </p>
+        <span class="eyebrow" style="color:var(--yellow);font-weight:700;letter-spacing:2px;font-size:12px;text-transform:uppercase;">Gdzie nas znajdziesz</span>
+        <h2>Targowisko<br>Miejskie</h2>
+        <p class="location-address">ul. Jana III Sobieskiego 6<br>05-122 Legionowo</p>
         <div class="hours-grid">
-          <div class="hours-row">
-            <span>Wtorek – Czwartek</span>
-            <span>12:00 – 21:00</span>
-          </div>
-          <div class="hours-row">
-            <span>Piątek – Sobota</span>
-            <span>12:00 – 22:00</span>
-          </div>
-          <div class="hours-row">
-            <span>Niedziela</span>
-            <span>12:00 – 21:00</span>
-          </div>
-          <div class="hours-row closed">
-            <span>Poniedziałek</span>
-            <span>Zamknięte</span>
-          </div>
+          <div class="hours-row"><span>Wtorek – Czwartek</span><span>12:00 – 21:00</span></div>
+          <div class="hours-row"><span>Piątek – Sobota</span><span>12:00 – 22:00</span></div>
+          <div class="hours-row"><span>Niedziela</span><span>12:00 – 21:00</span></div>
+          <div class="hours-row closed"><span>Poniedziałek</span><span>Zamknięte</span></div>
         </div>
-        <a href="tel:+48227744446" class="btn-primary">Zadzwoń: 22 774 44 46</a>
+        <a href="tel:+48227744446" class="btn-yellow">Zadzwoń: 22 774 44 46</a>
       </div>
       <div class="location-map">
-        <iframe
-          src="https://maps.google.com/maps?q=Jana+III+Sobieskiego+6,+Legionowo&output=embed&z=16"
-          width="100%"
-          height="380"
-          allowfullscreen=""
-          loading="lazy"
-          title="Mapa dojazdu do Wok This Way Legionowo">
-        </iframe>
+        <iframe src="https://maps.google.com/maps?q=Jana+III+Sobieskiego+6,+Legionowo&output=embed&z=16" width="100%" height="400" allowfullscreen="" loading="lazy" title="Mapa dojazdu do Wok This Way Legionowo"></iframe>
       </div>
     </div>
   </section>
 
   <!-- DOSTAWA -->
-  <section class="section section-light">
-    <div class="delivery-inner">
-      <div class="delivery-text">
-        <h2>Zamawiasz z domu?</h2>
-        <p>Dowozimy do Legionowa i okolic przy zamówieniu powyżej 40 zł. Catering dla firm też robimy — zadzwoń, dogadamy się.</p>
-        <a href="tel:+48227744446" class="btn-outline">22 774 44 46</a>
+  <section class="section section-soft">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Nie chce Ci się wychodzić?</span>
+        <h2>Dowieziemy</h2>
       </div>
-      <div class="delivery-badge">
-        <span class="delivery-min">min. 40 zł</span>
-        <span class="delivery-label">Legionowo i okolice</span>
+    </div>
+    <div class="delivery">
+      <div class="delivery-card a reveal">
+        <div class="ico">🛵</div>
+        <span class="big">od 40 zł</span>
+        <h3>Dowóz do domu</h3>
+        <p>Wozimy po Legionowie i okolicy. Minimalne zamówienie 40 zł — składasz przez telefon.</p>
+        <a href="tel:+48227744446" class="btn-dark">22 774 44 46</a>
+      </div>
+      <div class="delivery-card b reveal">
+        <div class="ico">🍱</div>
+        <span class="big">Catering</span>
+        <h3>Dla firm</h3>
+        <p>Robisz event albo karmisz biuro? Dogadamy ilości i dowieziemy na miejsce. Zadzwoń, ustalimy.</p>
+        <a href="kontakt.html" class="btn-dark">Napisz do nas</a>
       </div>
     </div>
   </section>
@@ -178,7 +176,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo">WOK THIS WAY</span>
+        <span class="footer-logo">Wok This Way</span>
         <p>Targowisko Miejskie<br>ul. Jana III Sobieskiego 6<br>05-122 Legionowo</p>
         <a href="tel:+48227744446">22 774 44 46</a>
         <a href="mailto:kontakt@wokthisway.pl">kontakt@wokthisway.pl</a>
