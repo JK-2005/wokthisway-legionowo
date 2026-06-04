@@ -50,6 +50,17 @@ nav {
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+  background: #fff;
+  padding: 5px 11px;
+  border-radius: 7px;
+  display: block;
 }
 
 .nav-logo .dot { color: var(--yellow); }
@@ -367,6 +378,9 @@ footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 64px 6% 
 .drink-row { display: flex; justify-content: space-between; font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--line); }
 .drink-row:last-child { border-bottom: none; }
 .drink-price { font-weight: 700; color: var(--red); }
+
+.menu-full-img { max-width: 900px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.menu-full-img img { width: 100%; display: block; }
 
 .sauces { display: flex; gap: 14px; flex-wrap: wrap; }
 .sauce { background: var(--ink); color: #fff; font-family: 'Anton', sans-serif; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; padding: 12px 22px; border-radius: 40px; }
