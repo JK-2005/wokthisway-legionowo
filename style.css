@@ -54,10 +54,14 @@ h1, h2, h3, h4 { overflow-wrap: break-word; }
   width: min(72vw, 380px);
   height: auto;
   opacity: 0;
-  transform: scale(0.9);
-  animation: burnIn 0.6s ease 0.1s forwards, burnFlicker 0.13s ease-in-out 0.7s infinite alternate;
+  animation: burnIn 0.4s cubic-bezier(0.2, 1.5, 0.4, 1) forwards, burnFlicker 0.12s ease-in-out 0.6s infinite alternate;
 }
-@keyframes burnIn { to { opacity: 1; transform: scale(1); } }
+/* logo pojawia sie nagle */
+@keyframes burnIn {
+  0%   { opacity: 0; transform: scale(0.5); }
+  60%  { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
 @keyframes burnFlicker {
   from { filter: drop-shadow(0 0 10px rgba(247,140,40,0.4)) drop-shadow(0 0 3px rgba(255,210,90,0.5)); }
   to   { filter: drop-shadow(0 0 28px rgba(255,150,40,0.85)) drop-shadow(0 0 9px rgba(255,225,120,0.7)); }
@@ -67,10 +71,17 @@ h1, h2, h3, h4 { overflow-wrap: break-word; }
   position: absolute;
   left: 50%; bottom: -28px;
   transform: translateX(-50%);
+  transform-origin: 50% 100%;
   width: min(82vw, 440px);
   height: 210px;
   z-index: 1;
   pointer-events: none;
+  animation: ignite 0.55s ease 0.42s both;
+}
+/* ogien sie rozpala po pojawieniu logo */
+@keyframes ignite {
+  0%   { transform: translateX(-50%) scaleY(0.04); opacity: 0; }
+  100% { transform: translateX(-50%) scaleY(1); opacity: 1; }
 }
 .flames span {
   position: absolute;
